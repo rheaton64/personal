@@ -12,11 +12,23 @@ mongo = PyMongo(app)
 
 @app.route("/hello/")
 def hello():
+    import datetime
+    post = {"author": "John",
+         "text": "My first blogg post!",
+         "tags": ["mongodb", "python", "pymongo"],
+         "date": datetime.datetime.utcnow()}
+    posts = mongo.db.data
+    posts.insert_one(post)
     return "Hello World!"
 
 @app.route("/test/")
 def test():
     return "test"
+
+@app.route("/data/first/")
+def getFirst():
+    dataFirst = mongo.db.data.find_one()
+    return dataFirst["name"]
 
 @app.route("/data/")
 def home_page():
