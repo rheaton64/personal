@@ -13,8 +13,8 @@ mongo = PyMongo(app)
 @app.route("/hello/")
 def hello():
     import datetime
-    post = {"author": "John",
-         "text": "My first blogg post!",
+    post = {"author": "Ryan",
+         "text": "This is a test of the server's post system",
          "tags": ["mongodb", "python", "pymongo"],
          "date": datetime.datetime.utcnow()}
     posts = mongo.db.data
@@ -38,3 +38,5 @@ def home_page():
 
 if __name__ == '__main__':
     app.run()
+
+    # i am a comment
