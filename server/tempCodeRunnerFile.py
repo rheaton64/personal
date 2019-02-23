@@ -1,0 +1,1 @@
+os.environ['FLASK_DEBUG'] = "1" # DO NOT USE IN PRODUCTION
